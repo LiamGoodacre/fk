@@ -1,11 +1,11 @@
 var should = require('should')
 
-var _f = require('../index')
+var fk = require('../index')
 
 
 describe('vargs', function () {
   it('passes arguments as an array', function () {
-    var fn = _f.vargs(function (args) { return args })
+    var fn = fk.vargs(function (args) { return args })
     should.deepEqual(fn(1, 2, 3), [1, 2, 3])
   })
 })
@@ -14,7 +14,7 @@ describe('vargs', function () {
 describe('vapply', function () {
   it('apply a function with an array of arguments', function () {
     var fn = function (a, b, c) { return [a, b, c] }
-    var out = _f.vapply(fn, [1, 2, 3])
+    var out = fk.vapply(fn, [1, 2, 3])
     should.deepEqual(out, [1, 2, 3])
   })
 })
@@ -23,18 +23,18 @@ describe('vapply', function () {
 describe('papply', function () {
   it('partially apply a function with arguments', function () {
     var ofn = function (a, b, c, d) { return [a, b, c, d] }
-    var pfn = _f.papply(ofn, [1, 2])
+    var pfn = fk.papply(ofn, [1, 2])
     var out = pfn(3, 4)
     should.deepEqual(out, [1, 2, 3, 4])
   })
 })
 
 
-describe('_f', function () {
+describe('fk', function () {
   it('allows different combinations of application', function () {
-    var fn = _f(function (a, b) {
-      return _f(function (c) {
-        return _f(function(d, e, f) {
+    var fn = fk(function (a, b) {
+      return fk(function (c) {
+        return fk(function(d, e, f) {
           return [6, 5, 4, 3, 2, 1]
         })
       })
@@ -60,7 +60,7 @@ describe('_f', function () {
   })
 
   it('pass undefined if no argument is given', function () {
-    var fn = _f(function (a, b, c) {
+    var fn = fk(function (a, b, c) {
       return [a, b, c]
     }, 3)
     var out = fn()(1, 2)
@@ -68,7 +68,7 @@ describe('_f', function () {
   })
 
   it('skips functions with no arguments', function () {
-    var fn = _f(function (a, b, c) {
+    var fn = fk(function (a, b, c) {
       return function (d, e, f) {
         return [a, b, c, d, e, f]
       }
