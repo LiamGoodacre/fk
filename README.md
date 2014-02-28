@@ -1,10 +1,10 @@
-C
+_f
 ===
 
 A tiny curry library.
 
 
-Curry: `C()`
+Curry: `_f()`
 ---
 
 A special kind of function currying.
@@ -28,7 +28,7 @@ Accepts an optional expected argument count - defaults to function.length.
 ````
 
 
-Varargs: `C.vargs(f)`
+Varargs: `_f.vargs(f)`
 ---
 
 Convert a function that accepts an array to a variadic function.
@@ -42,7 +42,7 @@ an array of all the arguments supplied.
 ```
 
 
-Variadic Apply: `C.vapply(f, args)`
+Variadic Apply: `_f.vapply(f, args)`
 ---
 
 Apply a function given an array of arguments.
@@ -54,7 +54,7 @@ Apply a function given an array of arguments.
 ```
 
 
-Partial Apply: `C.papply(f, args)`
+Partial Apply: `_f.papply(f, args)`
 ---
 
 Given a function `f`, and an array of arguments `args`; produce a function
