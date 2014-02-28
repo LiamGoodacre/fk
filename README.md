@@ -25,7 +25,7 @@ Accepts an optional expected argument count - defaults to function.length.
 ```
 @param f :: Function
 @param _n :: Optional Nat
-````
+```
 
 Example:
 
