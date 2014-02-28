@@ -23,9 +23,8 @@ arguments.
 Accepts an optional expected argument count - defaults to function.length.
 
 ```
-C
-  @param f :: Function
-  @param _n :: Optional Nat
+@param f :: Function
+@param _n :: Optional Nat
 ````
 
 
@@ -38,9 +37,8 @@ Given a function `f`, produce a function that when applied, apply `f` with
 an array of all the arguments supplied.
 
 ```
-C.vargs
-  @param f :: [*] -> a
-  @returns :: (...) -> a
+@param f :: [*] -> a
+@returns :: (...) -> a
 ```
 
 
@@ -50,10 +48,9 @@ Variadic Apply: `C.vapply(f, args)`
 Apply a function given an array of arguments.
 
 ```
-C.vapply
-  @param f :: (...) -> a
-  @param args :: [*]
-  @returns b
+@param f :: (...) -> a
+@param args :: [*]
+@returns b
 ```
 
 
@@ -61,12 +58,11 @@ Partial Apply: `C.papply(f, args)`
 ---
 
 Given a function `f`, and an array of arguments `args`; produce a function
-that when applied with `nargs` with apply `f` with the `args` prepended to
+that when applied with `nargs` will apply `f` with the `args` prepended to
 `nargs`.
 
 ```
-C.papply
-  @param f :: (...) -> a
-  @param args :: [*]
-  @returns :: (...) -> a
+@param f :: (...) -> a
+@param args :: [*]
+@returns :: (...) -> a
 ```
