@@ -62,7 +62,7 @@ var papply = function (f, args) {
   * @param f :: Function
   * @param _n :: Optional Nat
   */
-var C = module.exports = function recur(f, _n) {
+var _f = module.exports = function recur(f, _n) {
   var n = (!(_n > -1) || arguments.length === 1) ? f.length : _n
   return vargs(function (_args) {
     var args = (_args.length === 0) ? [null] : _args
@@ -80,6 +80,6 @@ var C = module.exports = function recur(f, _n) {
 }
 
 //  Expose utility functions
-C.vargs = vargs
-C.vapply = vapply
-C.papply = papply
+_f.vargs = vargs
+_f.vapply = vapply
+_f.papply = papply
