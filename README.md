@@ -27,6 +27,26 @@ Accepts an optional expected argument count - defaults to function.length.
 @param _n :: Optional Nat
 ````
 
+Example:
+
+```js
+var f = fk(function (a, b) {
+  return fk(function (c, d) {
+    return [a, b, c, d]
+  })
+})
+
+[1, 2, 3, 4]
+= f(1, 2, 3, 4)
+= f(1)(2, 3, 4)
+= f(1, 2)(3, 4)
+= f(1, 2, 3)(4)
+= f(1, 2)(3)(4)
+= f(1)(2, 3)(4)
+= f(1)(2)(3, 4)
+= f(1)(2)(3)(4)
+```
+
 
 Varargs: `fk.vargs(f)`
 ---
