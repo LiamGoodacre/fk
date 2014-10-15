@@ -70,7 +70,7 @@ Apply a function given an array of arguments.
 ```
 @param f :: (...) -> a
 @param args :: [*]
-@returns b
+@returns a
 ```
 
 

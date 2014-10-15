@@ -20,7 +20,7 @@ var vargs = function (f) {
   * 
   * @param f :: (...) -> a
   * @param args :: [*]
-  * @returns b
+  * @returns a
   */
 var vapply = function (f, args) {
   return f.apply(this, args)
@@ -65,7 +65,7 @@ var papply = function (f, args) {
 var fk = module.exports = function recur(f, _n) {
   var n = (!(_n > -1) || arguments.length === 1) ? f.length : _n
   return vargs(function (_args) {
-    var args = (_args.length === 0) ? [null] : _args
+    var args = (_args.length === 0) ? [undefined] : _args
     var len = args.length
 
     //  not enough args passed
